@@ -43,7 +43,7 @@ for platform in cl.get_platforms():
         b_buf = cl.Buffer(ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=b)
         dest_buf = cl.Buffer(ctx, mf.WRITE_ONLY, b.nbytes)
 
-               prg = cl.Program(ctx, """
+        prg = cl.Program(ctx, """
             __kernel void sum(__global const float *a,
             __global const float *b, __global float *c)
             {
